@@ -27,9 +27,8 @@ int main() {
         printf("\n------ Sistema de Campeonatos -----\n\n");
         printf("1. Cadastrar Aluno\n");
         printf("2. Listar Alunos\n");
-        printf("2. Ranking\n");
-        printf("3. Sair\n");
-        printf("Escolha: ");
+        printf("3. Ranking\n");
+        printf("4. Sair\n");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -61,17 +60,18 @@ void cadastro(Aluno alunos[]) {
     printf("\n----- Cadastro de Aluno -----\n");
 
     printf("Nome: ");
-    scanf(" %[^\n]", alunos[totalalunos].nome);
-
+    getchar();
+    fgets(alunos[totalalunos].nome, 50, stdin);
+    printf("\n");
     printf("Apelido: ");
-    scanf(" %[^\n]", alunos[totalalunos].apellido);
-
+    fgets(alunos[totalalunos].apellido, 50, stdin);
+    printf("\n");
     printf("Pontuação: ");
     scanf("%d", &alunos[totalalunos].pontuacao);
-
+    printf("\n");
     printf("Número de vitórias: ");
     scanf("%d", &alunos[totalalunos].numerodevitorias);
-
+    printf("\n");
     totalalunos++;
 
     printf("Aluno cadastrado com sucesso!\n");
