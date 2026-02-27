@@ -39,7 +39,7 @@ int main() {
                 listar(alunos);
                 break;
             case 3:
-
+                ranking(alunos);
                 break;
         }
 
@@ -62,16 +62,18 @@ void cadastro(Aluno alunos[]) {
     printf("Nome: ");
     getchar();
     fgets(alunos[totalalunos].nome, 50, stdin);
+    alunos[totalalunos].nome[strcspn(alunos[totalalunos].nome, "\n")] = '\0';
     printf("\n");
     printf("Apelido: ");
     fgets(alunos[totalalunos].apellido, 50, stdin);
+    alunos[totalalunos].apellido[strcspn(alunos[totalalunos].apellido, "\n")] = '\0'; //que saco que foi para descobrir como fazer o \n não ser imprimido em todo santo lugar
     printf("\n");
     printf("Pontuação: ");
     scanf("%d", &alunos[totalalunos].pontuacao);
     printf("\n");
     printf("Número de vitórias: ");
     scanf("%d", &alunos[totalalunos].numerodevitorias);
-    printf("\n");
+    printf("\n\n\n");
     totalalunos++;
 
     printf("Aluno cadastrado com sucesso!\n");
@@ -87,14 +89,25 @@ void listar(Aluno alunos[]) {
     printf("\n----- Lista de Alunos -----\n\n");
 
     for (int i = 0; i < totalalunos; i++) {
-        printf("Aluno %d\n", i + 1);
-        printf("Nome: %s\n", alunos[i].nome);
-        printf("Apelido: %s\n", alunos[i].apellido);
-        printf("Pontuação: %d\n", alunos[i].pontuacao);
-        printf("Vitórias: %d\n\n", alunos[i].numerodevitorias);
+        printf("Aluno %d | Nome: %s | Apelido: %s | Pontuação: %d | Vitórias: %d\n",i + 1, alunos[i].nome, alunos[i].apellido, alunos[i].pontuacao,   alunos[i].numerodevitorias);
+
+
+
+
     }
 }
 void ranking (Aluno alunos[]) {
 
 
+    int maior = 0;
+    for (int i = 0; i < totalalunos; i++) {
+
+            if (alunos[i].pontuacao > alunos[maior].pontuacao) {
+                maior = i;
+
+            }
+
+    }
+    printf("----- Ranking ------\n\n" );
+    printf("O jogador com com maior pontuação foi: %s com a pontuação de: %d\n", alunos[maior].nome, alunos[maior].pontuacao );
 }

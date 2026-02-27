@@ -27,7 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="135c394b-d014-4805-8d83-9b6ea214ac3e" name="Changes" comment="Atividade II">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atividade II/AtividadeII.c" beforeDir="false" afterPath="$PROJECT_DIR$/Atividade II/AtividadeII.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atividade II/AtividadeII.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Atividade II/AtividadeII.exe" afterDir="false" />
     </list>
@@ -141,7 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1772147765695</updated>
       <workItem from="1772147768008" duration="1304000" />
-      <workItem from="1772149518876" duration="825000" />
+      <workItem from="1772149518876" duration="4772000" />
     </task>
     <task id="LOCAL-00001" summary="Atividade I primeiro comit">
       <option name="closed" value="true" />
@@ -175,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772149381360</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Atividade II">
+      <option name="closed" value="true" />
+      <created>1772150406071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772150406071</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
