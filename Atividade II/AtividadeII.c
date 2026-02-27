@@ -66,7 +66,7 @@ void cadastro(Aluno alunos[]) {
     printf("\n");
     printf("Apelido: ");
     fgets(alunos[totalalunos].apellido, 50, stdin);
-    alunos[totalalunos].apellido[strcspn(alunos[totalalunos].apellido, "\n")] = '\0'; //que saco que foi para descobrir como fazer o \n não ser imprimido em todo santo lugar
+    alunos[totalalunos].apellido[strcspn(alunos[totalalunos].apellido, "\n")] = '\0'; //que saco que foi para descobrir como fazer o \n n?o ser imprimido em todo santo lugar
     printf("\n");
     printf("Pontuação: ");
     scanf("%d", &alunos[totalalunos].pontuacao);
