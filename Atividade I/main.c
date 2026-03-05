@@ -2,7 +2,6 @@
 #include <locale.h>
 #include <string.h>
 
-
 typedef struct {
     char menu;
 } pr;
@@ -16,9 +15,7 @@ typedef struct {
 } login;
 
 void cadastro(login *p);
-
 void logar(login *p);
-
 void principal(pr *p);
 
 int main(void) {
@@ -26,18 +23,21 @@ int main(void) {
     pr pv;
 
     setlocale(LC_ALL, "");
-    principal(&pv);
-    printf("************************************************\n");
-    printf("* BEM VINDO/A AO SISTEMA DE VENDA DE PASSAGENS *\n");
-    printf("************************************************\n\n");
 
+
+
+    printf("\n");
+    printf("=================================================\n");
+    printf("      SISTEMA DE VENDA DE PASSAGENS\n");
+    printf("=================================================\n\n");
 
     printf("Você já possui um cadastro?\n\n");
-    printf("1 - Sim || 2 - Não\n");
-    printf("\n");
+    printf(" 1 - Sim\n");
+    printf(" 2 - Não\n\n");
+    printf("Escolha: ");
     scanf("%d", &p1.cadastroSN);
     getchar();
-    printf("\n\n\n\n\n\n");
+    printf("\n\n");
 
     if (p1.cadastroSN == 2) {
         cadastro(&p1);
@@ -48,65 +48,96 @@ int main(void) {
     return 0;
 }
 
-void cadastro(login *p) {
+void cadastro(login *p ) {
     if (p->cadastroSN == 2) {
-        printf("---------------------------------------------------------------------------------------------\n\n\n");
-        printf("Para cadastrar-se por favor, insira seu \n\n");
+        printf("\n");
+        printf("=================================================\n");
+        printf("                 CADASTRO\n");
+        printf("=================================================\n\n");
+
+        printf("Para cadastrar-se, preencha os dados abaixo:\n\n");
+
         printf("Email: ");
         fgets(p->email, 50, stdin);
-        printf("\n\n");
+        printf("\n");
+
+
 
         do {
             printf("Senha: ");
             fgets(p->senha, 50, stdin);
             printf("\n");
-            printf("Digite a senha novamente: ");
+
+            printf("Confirme a senha: ");
             fgets(p->confirmarsenha, 50, stdin);
             printf("\n");
+
             if (strcmp(p->senha, p->confirmarsenha) == 0) {
                 break;
             } else {
-                printf("As senhas não são iguais, por favor, insira novamente.\n\n");
+                printf("As senhas não são iguais. Tente novamente.\n\n");
             }
         } while (1);
+
+
+
+        printf("Cadastro finalizado!\n");
+        printf("=================================================\n\n");
+
     }
     p->cadastroSN = 1;
+
 }
 
 void logar(login *p) {
     if (p->cadastroSN == 1) {
-        printf("---------------------------------------------------------------------------------------------\n\n\n");
-        do {
-            printf("Para continuar por favor, insira seu login.\n\n");
-            printf("email:  ");
-            fgets(p->email, sizeof(p->email), stdin);
-            printf("\n");
-            printf("Senha: ");
-            fgets(p->senha, sizeof(p->senha), stdin);
+        printf("\n");
+        printf("=================================================\n");
+        printf("                   LOGIN\n");
+        printf("=================================================\n\n");
 
-            if (strcmp(p->email, p->email) == 0 && strcmp(p->senha, p->senha) == 0) {
+        char emailDigitado[50];
+        char senhaDigitada[50];
+
+        do {
+            printf("Para continuar, faça login:\n\n");
+
+            printf("Email: ");
+            fgets(emailDigitado, sizeof(emailDigitado), stdin);
+            printf("\n");
+
+            printf("Senha: ");
+            fgets(senhaDigitada, sizeof(senhaDigitada), stdin);
+
+            if (strcmp(p->email, emailDigitado) == 0 && strcmp(p->senha, senhaDigitada) == 0) {
+                printf("\n\nLogin efetuado com sucesso!\n");
+                printf("=================================================\n\n");
                 break;
             } else {
-                printf("Email ou senha incorretos.\n\n\n\n");
+                printf("\n\nEmail ou senha incorretos. Tente novamente.\n\n");
             }
         } while (1);
 
-        printf("\n\n\n\n\n\n");
+        printf("\n");
     }
 }
 
 void principal(pr *p) {
-    printf("---------------------------------------------------------------------------------------------\n\n\n");
-    printf("************************************************\n");
-    printf("* BEM VINDO/A AO SISTEMA DE VENDA DE PASSAGENS *\n");
-    printf("************************************************\n\n");
+    printf("\n");
+    printf("=================================================\n");
+    printf("      SISTEMA DE VENDA DE PASSAGENS\n");
+    printf("=================================================\n\n");
 
+    printf("Menu de funcionalidades:\n\n");
+    printf(" 1 - Visualizar passagens disponíveis\n");
+    printf(" 2 - Consultar passagens\n");
+    printf(" 3 - Cancelar passagens\n");
+    printf(" 4 - Configurações\n");
+    printf(" 5 - Sair\n\n");
 
-    printf("----Menu de funcionalidades \n\n");
-    printf("1. Visualizar passagens disponíveis\n");
-    printf("2. Consultar passagens\n");
-    printf("3. Cancelar passagens\n");
-    printf("4. Configurações\n");
-    printf("5. sair\n");
+    printf("Escolha: ");
     scanf("%d", &p->menu);
+
+    printf("\n");
+    printf("-------------------------------------------------\n");
 }
